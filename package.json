@@ -6,8 +6,16 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
+    "immutable": "^3.8.1",
+    "kasia": "^4.0.19",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-immutable": "^3.0.11",
+    "redux-saga": "^0.14.3",
+    "regenerator-runtime": "^0.10.1",
+    "reselect": "^2.5.4"
   },
   "scripts": {
     "start": "react-scripts start",

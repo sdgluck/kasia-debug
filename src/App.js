@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { connectWpQuery } from 'kasia/connect';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
+    console.log('props', this.props);
+
     return (
       <div className="App">
         <div className="App-header">
@@ -18,4 +21,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connectWpQuery(
+  (wpapi) => wpapi.pages().slug('sobre').embed().get(),
+  () => true
+)(App);
