@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux'
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import kasia from 'kasia'
 import wpapi from 'wpapi'
@@ -17,11 +17,15 @@ const rootReducer = combineReducers({
 
 const sagaMiddleware = createSagaMiddleware()
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export default function configureStore (initialState) {
   const store = createStore(
     rootReducer,
     initialState,
-    applyMiddleware(sagaMiddleware)
+    composeEnhancers(
+      applyMiddleware(sagaMiddleware)
+    )
   )
 
   sagaMiddleware.run(rootSaga)
