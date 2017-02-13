@@ -4,6 +4,10 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate', nextProps, nextState);
+  }
+
   render() {
     console.log('props', this.props);
 
@@ -23,5 +27,5 @@ class App extends Component {
 
 export default connectWpQuery(
   (wpapi) => wpapi.pages().slug('sobre').embed().get(),
-  () => true
+  (thisProps, newProps) => console.log('shouldUpdate', thisProps, newProps) || true
 )(App);
