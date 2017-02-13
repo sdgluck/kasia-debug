@@ -9,7 +9,7 @@ import './index.css';
 
 ReactDOM.render(
   <Provider store={Store()}>
-    <App />
+    <App slug='sobre' />
   </Provider>,
   document.getElementById('root')
 );

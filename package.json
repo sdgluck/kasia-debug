@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "immutable": "^3.8.1",
-    "kasia": "^4.0.20",
+    "kasia": "beta",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",

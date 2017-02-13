@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connectWpQuery } from 'kasia/connect';
+import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate', nextProps, nextState);
-  }
-
-  render() {
+render() {
     console.log('props', this.props);
 
     return (
@@ -25,7 +22,7 @@ class App extends Component {
   }
 }
 
-export default connectWpQuery(
-  (wpapi) => wpapi.pages().slug('sobre').embed().get(),
-  (thisProps, newProps) => console.log('shouldUpdate', thisProps, newProps) || true
-)(App);
+export default connect(({ wordpress }) => wordpress)(connectWpQuery(
+  (wpapi, props) => wpapi.pages().slug(props.slug).embed().get(),
+  (thisProps, newProps) => thisProps.slug !== newProps.slug
+)(App));
