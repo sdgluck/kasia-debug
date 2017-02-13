@@ -3187,9 +3187,9 @@ jsx-ast-utils@^1.0.0, jsx-ast-utils@^1.3.1:
   dependencies:
     object-assign "^4.1.0"
 
-kasia@^4.0.19:
-  version "4.0.19"
-  resolved "https://registry.yarnpkg.com/kasia/-/kasia-4.0.19.tgz#47e21c9fba87faae22044cce70aa40ba46e05fea"
+kasia@^4.0.20:
+  version "4.0.20"
+  resolved "https://registry.yarnpkg.com/kasia/-/kasia-4.0.20.tgz#00826e7c1588e8c6f25805f8f2025bf2f36da1c0"
   dependencies:
     humps "^2.0.0"
     is-node-fn "^1.0.0"
